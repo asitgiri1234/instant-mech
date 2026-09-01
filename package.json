@@ -1,0 +1,26 @@
+{
+  "name": "instant-mech",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @instant-mech/api run db:migrate",
+    "db:deploy": "pnpm --filter @instant-mech/api run db:deploy",
+    "db:seed": "pnpm --filter @instant-mech/api run db:seed",
+    "db:reset": "pnpm --filter @instant-mech/api run db:reset",
+    "db:studio": "pnpm --filter @instant-mech/api run db:studio",
+    "build:shared": "pnpm --filter @instant-mech/shared run build",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm run build:shared && pnpm -r run typecheck",
+    "dev:api": "pnpm --filter @instant-mech/api run dev",
+    "dev:web": "pnpm --filter @instant-mech/web run dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
