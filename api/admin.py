@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Mechanic, ServiceRequest
+
+admin.site.register(Mechanic)
+admin.site.register(ServiceRequest)
